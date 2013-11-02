@@ -4,7 +4,8 @@ function mainController($scope, $http){
     $scope.apiKey = "2b0dc330fcebb3d65bdddc74aae878b3";
     $scope.init = function() {
       
-        $http({method: 'GET', url: 'http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=onion+soup', headers:{'X-Requested-With': null}}).
+     	//URL parameters are hard-coded to 'onion soup' for testing purposes
+        $http({method: 'GET', url: 'http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=onion+soup', headers:{'X-Requested-With': null}}).//added 'headers' b/c of 405 error
         	success(function(data) {
             	console.log(data);
         	}).
