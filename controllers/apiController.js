@@ -13,16 +13,19 @@ app.controller("apiController", function ($scope, $http) {
         $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=onion+soup' + '&callback=JSON_CALLBACK').
         	//if successful connection, data console logged
         	success(function(data) {
-            	console.log(data.matches[1].recipeName);
-        //    	angular.forEach(data, function(value, in//dex){
-              // 	var match = value.matches.id;
-                                
-              //      $scope.results.push(match);
-              //      console.log($scope.results);
-              //  });
+        		//console.log(data);
+        //    	console.log(data.matches[1].recipeName);
+	        	angular.forEach(data, function(value, index) {
+	        		var matches = data.matches;
+	        		console.log(matches);
+//	        		$scope.results.push(recipe);
+//	        		console.log($scope.results);
+        		}); //angular.forEach
         	}).error(function(error) {
- 				console.log('Could not retrieve data');
-        	});
-    };
+				console.log('Could not retrieve data');
+
+    		}); //.error
+    	
+    }; //init
  
 });
