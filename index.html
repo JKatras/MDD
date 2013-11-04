@@ -1,10 +1,15 @@
 <!doctype html>
-<html ng-app>
+<html ng-app = "EatInApp">
 <head>
 	 
 </head>
 </html>
 <body>
 
-<div class="container main-frame" ng-app="EatIn" ng-controller="mainController" ng-init="init()"></div>
+	<div class="container main-frame" ng-controller="apiController" ng-init = "init()"></div>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
+	<script src="controllers/apiController.js" type="text/javascript"></script>
+	<!--<script src="libraries/angular.min.js" type="text/javascript"></script>-->
+	<link rel="stylesheet" href="assets/Bootstraps/html/css/bootstrap.css"/>
+</body>
