@@ -25,7 +25,12 @@ app.controller("apiController", function ($scope, $http) {
 				console.log('Could not retrieve data');
 
     		}); //.error
-    	
+    	$http.jsonp('http://api.yummly.com/v1/api/recipe/Onion-Soup-without-Tears-443154?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
+    		success(function(data) {
+    			console.log(data);
+    		}).error(function(error) {
+    			console.log('Recipe not found');
+    		});
     }; //init
  
 });
