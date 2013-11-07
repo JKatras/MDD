@@ -5,32 +5,44 @@ app.controller("apiController", function ($scope, $http) {
  	$scope.appId = "4606347e";
  	//var for unique API Key
     $scope.apiKey = "2b0dc330fcebb3d65bdddc74aae878b3";
+    //array that will contain search results
     $scope.results = [];
+    $scope.links = [];
     //initialize API connection
-    $scope.init = function() {
+    $scope.searchRecipes = function() {
+    	$scope.results = [''];
      	//URL parameters are hard-coded to 'onion soup' for testing purposes
      	//results returned will be JSONP format
-        $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=onion+soup' + '&callback=JSON_CALLBACK').
-        	//if successful connection, data console logged
-        	success(function(data) {
-        		console.log(data);
-        //    	console.log(data.matches[1].recipeName);
-//	        	angular.forEach(data, function(value, index) {
-//	        		var matches = data.matches;
-//	        		console.log(matches);
-//	        		$scope.results.push(recipe);
-//	        		console.log($scope.results);
-//        		}); //angular.forEach
-        	}).error(function(error) {
-				console.log('Could not retrieve data');
-
-    		}); //.error
-    	$http.jsonp('http://api.yummly.com/v1/api/recipe/Onion-Soup-without-Tears-443154?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
+        $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&callback=JSON_CALLBACK').
+        	//if successful return, parse data
+        success(function(data) {
+        		console.log(data); // **uncomment to view all returned data**
+        		//forEach loop runs through matches, var assigned to recipeNames
+        		//push names to results array
+        	angular.forEach(data.matches, function(value, index) {
+        		var recipe = value.recipeName;
+        		$scope.results.push(recipe);
+        		//***Not sure how to make this accessible to getDetails()***
+        		var url = value.id;
+        		$scope.links.push(url);
+    		});
+    		console.log($scope.links);
+        }). // success
+    	//message in case of request error
+    	error(function(error) {
+			
+		}); // error 
+    }; // searchRecipes
+    
+    $scope.getDetails = function () {
+    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + //***Need a value for targeted recipe's url*** 
+    	 '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
     		success(function(data) {
     			console.log(data);
-    		}).error(function(error) {
+    		}). //success
+    		error(function(error) {
     			console.log('Recipe not found');
-    		});
-    }; //init
- 
+    		}); // error
+   
+ 	}; // getDetails
 });

@@ -1,29 +1,41 @@
 <!doctype html>
 <html ng-app = "EatInApp">
 <head>
-	 
+	<link rel="stylesheet" href="assets/Bootstraps/html/css/bootstrap.css"/>
+	<link rel="stylesheet" href="assets/css/global.css"/>
+	<link rel="stylesheet" href="assets/Bootstraps/html/css/bootstrap-responsive.css"/> 
 </head>
-</html>
-<nav class="navbar">
-	<img src="assets/Images/EatIn_logo_1024x504.png" alt="EatIn Logo" />
-</nav>
 <body>
+<nav class="navbar">
+	<a href="index.html"><img id="logo" src="assets/Images/EatIn_logo_1024x504.png" alt="EatIn Logo" /></a>
+</nav>
 
 	<div class="container" ng-controller="apiController" ng-init = "init()">
 	<h1>Search Recipes</h1>
-		<form ng-submit="addCriteria">
-			<h2>By Keyword</h2>
-			<input type="text" name="keyword" placeholder="Add a search term" />
-			<h2>That Include</h2>
-			<input type="text" name="ingredient" placeholder="Add desired ingredients"/>
-			<h2>And Don't Include</h2>
-			<input type="text" name="exclude" placeholder="Add ingredients to exclude"/>
+		<form ng-submit="searchRecipes()" class="form-inline">
+			<fieldset>
+			<label>By Keyword</label>
+			<input ng-model="keyword" type="text" class="input-medium" name="keyword" placeholder="Add a search term" />
+			
+			<label>That Include</label>
+			<input ng-model="include" type="text" class="input-medium" name="include" placeholder="Add desired ingredients"/>
+			
+			<label>And Don't Include</label>
+			<input ng-model="exclude" type="text" class="input-medium" name="exclude" placeholder="Add ingredients to exclude"/>
+			<input class="btn" type="submit" value="Search" />
+			</fieldset>
 		</form>
-	</div>
 	
+	<ul>
+		<li ng-repeat="recipe in results"><a href="{{recipe.id}}" ng-click="getDetails()">{{recipe}}</a></li>
+	</ul>
+	
+	</div>
+	<footer>
+		
+	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
-	<script src="controllers/apiController.js" type="text/javascript"></script>
-	<!--<script src="libraries/angular.min.js" type="text/javascript"></script>-->
-	<link rel="stylesheet" href="assets/Bootstraps/html/css/bootstrap.css"/>
-	<link rel="stylesheet" href="assets/css/global.css"/>
+	<script src="controllers/apiController.js" type="text/javascript"></script>	
 </body>
+
+</html>
