@@ -20,11 +20,7 @@ app.controller("apiController", function ($scope, $http) {
         		//forEach loop runs through matches, var assigned to recipeNames
         		//push names to results array
         	angular.forEach(data.matches, function(recipe, index) {
-        	//	var recipe = value.recipeName;
         		$scope.results.push(recipe);
-        		//***Not sure how to make this accessible to getDetails()***
-        	//	var url = value.id;
-        	//	$scope.links.push(url);
     		});
     	//	console.log($scope.links);
         }). // success
