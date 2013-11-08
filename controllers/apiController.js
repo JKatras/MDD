@@ -29,7 +29,7 @@ app.controller("apiController", function ($scope, $http) {
     }; // searchRecipes
     
     $scope.getDetails = function () {
-    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' +//***RECIPE ID HERE***
+    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + $scope.recipeID
     	+ '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
     		success(function(data) {
     			console.log(data);
