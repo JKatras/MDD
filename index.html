@@ -1,9 +1,9 @@
 <!doctype html>
 <html ng-app = "EatInApp">
 <head>
-	<link rel="stylesheet" href="assets/Bootstraps/html/css/bootstrap.css"/>
+	<link rel="stylesheet" href="assets/Bootstrap/css/bootstrap.css"/>
 	<link rel="stylesheet" href="assets/css/global.css"/>
-	<link rel="stylesheet" href="assets/Bootstraps/html/css/bootstrap-responsive.css"/> 
+	<!--<link rel="stylesheet" href="assets/Bootstrap/html/css/bootstrap-responsive.css"/> -->
 </head>
 <body>
 <nav class="navbar">
@@ -11,31 +11,30 @@
 </nav>
 
 	<div class="container" ng-controller="apiController" ng-init = "init()">
-	<h1>Search Recipes</h1>
-		<form ng-submit="searchRecipes()" class="form-inline">
-			<fieldset>
+	<!--<h1>Search Recipes</h1>-->
+		<form ng-submit="searchRecipes()" class="form-horizontal" role="form">
+			<!--<fieldset>-->
+			<legend>Search Recipes</legend>
 			<label>By Keyword</label>
-			<input ng-model="keyword" type="text" class="input-medium" name="keyword" placeholder="Add a search term" />
+			<input ng-model="keyword" type="text" class="input-sm" name="keyword" placeholder="Add search term" />
 			
 			<label>That Include</label>
-			<input ng-model="include" type="text" class="input-medium" name="include" placeholder="Add desired ingredients"/>
+			<input ng-model="include" type="text" class="input-sm" name="include" placeholder="Desired ingredients"/>
 			
 			<label>And Don't Include</label>
-			<input ng-model="exclude" type="text" class="input-medium" name="exclude" placeholder="Add ingredients to exclude"/>
+			<input ng-model="exclude" type="text" class="input-sm" name="exclude" placeholder="Undesired ingredients"/>
 			<input class="btn" type="submit" value="Search" />
-			</fieldset>
+			<!--</fieldset>-->
 		</form>
 	
 	<ul>		
 		<li ng-repeat="recipe in results">
-		    <div class="row-fluid">
-		        <div class="span3">
+		    <div class="row">
 		            <img src="{{recipe.imageUrlsBySize.90}}" />
-		        </div>
-		        <div>
+		        
 		            <h3>{{recipe.recipeName}}</h3>
 		            <h4>Rating: {{recipe.rating}}</h4>
-		        </div>
+		        
 		    </div>
 		</li>
 	</ul>
