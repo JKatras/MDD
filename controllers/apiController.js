@@ -19,14 +19,14 @@ app.controller("apiController", function ($scope, $http) {
         		console.log(data); // **uncomment to view all returned data**
         		//forEach loop runs through matches, var assigned to recipeNames
         		//push names to results array
-        	angular.forEach(data.matches, function(value, index) {
-        		var recipe = value.recipeName;
+        	angular.forEach(data.matches, function(recipe, index) {
+        	//	var recipe = value.recipeName;
         		$scope.results.push(recipe);
         		//***Not sure how to make this accessible to getDetails()***
-        		var url = value.id;
-        		$scope.links.push(url);
+        	//	var url = value.id;
+        	//	$scope.links.push(url);
     		});
-    		console.log($scope.links);
+    	//	console.log($scope.links);
         }). // success
     	//message in case of request error
     	error(function(error) {
@@ -35,8 +35,7 @@ app.controller("apiController", function ($scope, $http) {
     }; // searchRecipes
     
     $scope.getDetails = function () {
-    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + //***Need a value for targeted recipe's url*** 
-    	 '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
+    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + $scope.links[$this] + '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
     		success(function(data) {
     			console.log(data);
     		}). //success

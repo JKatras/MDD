@@ -26,8 +26,18 @@
 			</fieldset>
 		</form>
 	
-	<ul>
-		<li ng-repeat="recipe in results"><a href="" ng-click="getDetails()">{{recipe}}</a></li>
+	<ul>		
+		<li ng-repeat="recipe in results">
+		    <div class="row-fluid">
+		        <div class="span3">
+		            <img src="{{recipe.imageUrlsBySize.90}}" />
+		        </div>
+		        <div>
+		            <h3>{{recipe.recipeName}}</h3>
+		            <h4>Rating: {{recipe.rating}}</h4>
+		        </div>
+		    </div>
+		</li>
 	</ul>
 	
 	</div>
