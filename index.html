@@ -34,9 +34,9 @@
 	<ul>		
 		<li ng-repeat="recipe in results">
 		    <div class="row">
-		    	<a ng-model="recipeID" href="{{recipe.id}}"></a>
+		    	
 	            <img src="{{recipe.imageUrlsBySize.90}}" />
-		        
+		        <a ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID" href="">{{recipe.id}}</a>
 	            <h3>{{recipe.recipeName}}</h3>
 	            <h4>Rating: {{recipe.rating}}</h4> 
 		    </div>

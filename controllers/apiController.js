@@ -28,8 +28,8 @@ app.controller("apiController", function ($scope, $http) {
 		}); // error 
     }; // searchRecipes
     
-    $scope.getDetails = function () {
-    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + $scope.recipeID
+    $scope.getDetails = function (args) {
+    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + args.recipeID
     	+ '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
     		success(function(data) {
     			console.log(data);
