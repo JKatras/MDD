@@ -3,45 +3,55 @@
 <head>
 	<link rel="stylesheet" href="assets/Bootstrap/css/bootstrap.css"/>
 	<link rel="stylesheet" href="assets/css/global.css"/>
-	<!--<link rel="stylesheet" href="assets/Bootstrap/html/css/bootstrap-responsive.css"/> -->
 </head>
 <body>
 	<nav class="navbar">
-		<a href="index.html"><img id="logo" src="assets/Images/EatIn_logo_1024x504.png" alt="EatIn Logo" /></a>
+		<a href="index.html"><img id="logo" src="assets/Images/EatIn_logo_166x81.png" alt="EatIn Logo" /></a>
 	</nav>
 
-	<div class="container" ng-controller="apiController" ng-init = "init()">
+	<div class="container" ng-controller="apiController">
 	
-		<form ng-submit="searchRecipes()" class="form-horizontal" role="form">
+		<form ng-submit="searchRecipes()" role="form">
 			
 			<legend>Search Recipes</legend>
-			<div class="form-group">
-			<label>By Keyword</label>
-			<input ng-model="keyword" type="text" class="input-sm" name="keyword" placeholder="Add search term" />
-			</div>
-			<div class="form-group">
-			<label>That Include</label>
-			<input ng-model="include" type="text" class="input-sm" name="include" placeholder="Desired ingredients"/>
-			</div>
-			<div class="form-group">
-			<label>And Don't Include</label>
-			<input ng-model="exclude" type="text" class="input-sm" name="exclude" placeholder="Undesired ingredients"/>
-			</div>
-			<input class="btn" type="submit" value="Search" />
+			<div class="form-group col-xs-12 col-sm-4">
 			
+				<label for="keyword" class="control-label">By Keyword</label>
+					
+					<input ng-model="keyword" type="text" id="keyword" placeholder="Add search term" />
+	
+			</div>
+			
+			<div class="form-group col-xs-12 col-sm-4">
+				<label for="include" class="control-label">That Include</label>
+				
+					<input ng-model="include" type="text" id="include" placeholder="Desired ingredients"/>
+			
+			</div>
+			
+			<div class="form-group col-xs-12 col-sm-4">
+				<label for="exclude" class="control-label">And Don't Include</label>
+				
+					<input ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
+				
+			</div>
+			
+			<div class="form-group col-xs-4 col-sm-offset-4">
+			<input id="search-recipe" class="btn" type="submit" value="Search" />
+			</div>
 		</form>
 	
-	<ul>		
-		<li ng-repeat="recipe in results">
-		    <div class="row">
-		    	
-	            <img src="{{recipe.imageUrlsBySize.90}}" />
-		        <a ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID" href="">{{recipe.id}}</a>
-	            <h3>{{recipe.recipeName}}</h3>
-	            <h4>Rating: {{recipe.rating}}</h4> 
-		    </div>
-		</li>
-	</ul>
+		<ul>		
+			<li ng-repeat="recipe in results">
+			    <div class="row">
+			    	
+		            <img src="{{recipe.imageUrlsBySize.90}}" />
+			        <a ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID" href="">{{recipe.id}}</a>
+		            <h3>{{recipe.recipeName}}</h3>
+		            <h4>Rating: {{recipe.rating}}</h4> 
+			    </div>
+			</li>
+		</ul>
 	
 	</div>
 	<footer>

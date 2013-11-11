@@ -1,9 +1,17 @@
 
 .navbar img {
-	height: 75px;
-	width: 160px;
+	/*height: 75px;
+	width: 160px;*/
 }
 .container ul {
 	margin-top: 10px;
 	list-style: none;
+}
+
+.container input {
+	width: 100%;
+}
+
+#search-recipe {
+	width: 210px;
 }
