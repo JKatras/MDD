@@ -10,48 +10,43 @@
 	</nav>
 
 	<div class="container" ng-controller="apiController">
-	
+		<!--form layout is 12-column grid-->
 		<form ng-submit="searchRecipes()" role="form">
-			
 			<legend>Search Recipes</legend>
+		<!--divs span width of container on devices <768px
+			broken up into thirds if screen >=768px-->
 			<div class="form-group col-xs-12 col-sm-4">
-			
 				<label for="keyword" class="control-label">By Keyword</label>
-					
-					<input ng-model="keyword" type="text" id="keyword" placeholder="Add search term" />
-	
+				<input ng-model="keyword" type="text" id="keyword" placeholder="Add search term" />
 			</div>
-			
 			<div class="form-group col-xs-12 col-sm-4">
 				<label for="include" class="control-label">That Include</label>
-				
-					<input ng-model="include" type="text" id="include" placeholder="Desired ingredients"/>
-			
+				<input ng-model="include" type="text" id="include" placeholder="Desired ingredients"/>
 			</div>
-			
 			<div class="form-group col-xs-12 col-sm-4">
 				<label for="exclude" class="control-label">And Don't Include</label>
-				
-					<input ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
-				
+				<input ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
 			</div>
-			
 			<div class="form-group col-xs-4 col-sm-offset-4">
-			<input id="search-recipe" class="btn" type="submit" value="Search" />
+			<input id="search-recipe-btn" class="btn" type="submit" value="Search" />
 			</div>
 		</form>
 	
-		<ul>		
-			<li ng-repeat="recipe in results">
-			    <div class="row">
-			    	
-		            <img src="{{recipe.imageUrlsBySize.90}}" />
-			        <a ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID" href="">{{recipe.id}}</a>
+		<table class="table">
+		
+		         		
+			<tr ng-repeat="recipe in results" ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID">
+			
+				<td>
+			   		<img src="{{recipe.imageUrlsBySize.90}}" />
+			    </td>
+			    <td>
 		            <h3>{{recipe.recipeName}}</h3>
 		            <h4>Rating: {{recipe.rating}}</h4> 
-			    </div>
-			</li>
-		</ul>
+			    </td>
+			
+			</tr>
+		</table>
 	
 	</div>
 	<footer>
