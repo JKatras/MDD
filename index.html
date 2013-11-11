@@ -32,13 +32,13 @@
 			</div>
 		</form>
 	
-		<table class="table">
+		<table class="table table-hover">
 		
 		         		
 			<tr ng-repeat="recipe in results" ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID">
 			
 				<td>
-			   		<img src="{{recipe.imageUrlsBySize.90}}" />
+			   		<img ng-src="{{recipe.imageUrlsBySize.90}}" />
 			    </td>
 			    <td>
 		            <h3>{{recipe.recipeName}}</h3>

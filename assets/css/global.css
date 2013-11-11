@@ -15,3 +15,14 @@
 #search-recipe-btn {
 	width: 210px;
 }
+
+/*I want to make table/form elements non-selectable by user
+This code doesn't do it */
+form, table {
+	-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}

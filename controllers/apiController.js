@@ -9,15 +9,16 @@ app.controller("apiController", function ($scope, $http) {
     $scope.results = [];
     //initialize API connection
     $scope.searchRecipes = function() {
-    	$scope.results = [''];
-     	//URL parameters are hard-coded to 'onion soup' for testing purposes
+//    ***Need to find a way to clear previous search results but not have first result blank***
+    	$scope.results =[''];
+ 
      	//results returned will be JSONP format
         $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
         	//if successful return, parse data
         success(function(data) {
-        		console.log(data); // **uncomment to view all returned data**
-        		//forEach loop runs through matches, var assigned to recipeNames
-        		//push names to results array
+        	console.log(data); // **uncomment to view all returned data**
+        	//forEach loop runs through matches, var assigned to recipeNames
+        	//push names to results array
         	angular.forEach(data.matches, function(recipe, index) {
         		$scope.results.push(recipe);
     		});
