@@ -5,5 +5,9 @@ app.config(['$routeProvider', function (r) {
 		{
 			templateUrl:'views/results.html',
 		//	controller:'apiController'
+		}).
+	when('/details/:id',
+		{
+			templateUrl: 'views/details.html'
 		});
 }]);
