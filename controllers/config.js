@@ -1,9 +1,10 @@
 var app = angular.module('EatInApp', [])
 
-app.config(function ($routeProvider) {
-	$routeProvider.when('/',
+app.config(['$routeProvider', function (r) {
+	r.when('/',
 		{
-			templateUrl:'views/results.html' ,
+			templateUrl:'views/results.html',
 			controller:'apiController'
-		})
-});
+		});
+}]);
+
