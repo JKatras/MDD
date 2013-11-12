@@ -1,6 +1,7 @@
 body {
 	background: url(../img/bamboo-cutting-board.jpg);
-	background-size: 100%;
+	background-size: 120%;
+	
 }
 
 .container ul {
@@ -15,12 +16,12 @@ body {
 #search-recipe-btn {
 	width: 210px;
 }
-table h3 {
-	margin-top: 10px;
+.recipe-title {
+	margin-top: 3px;
 }
 /*Can't seem to override bootstrap padding rules here*/
-.result-table td {
-	padding-bottom: 0px;
+.result-table > tbody > tr > td > h5{
+	margin-bottom: 0px;
 }
 /*I want to make table/form elements non-selectable by user
 This code doesn't do it */
