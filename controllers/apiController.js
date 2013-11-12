@@ -1,4 +1,4 @@
-var app = angular.module('EatInApp', []);
+//var app = angular.module('EatInApp', []);
 
 app.controller("apiController", function ($scope, $http) {
  	//var for unique App ID
