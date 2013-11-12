@@ -15,7 +15,13 @@ body {
 #search-recipe-btn {
 	width: 210px;
 }
-
+table h3 {
+	margin-top: 10px;
+}
+/*Can't seem to override bootstrap padding rules here*/
+.result-table td {
+	padding-bottom: 0px;
+}
 /*I want to make table/form elements non-selectable by user
 This code doesn't do it */
 form, table {
