@@ -19,7 +19,9 @@ body {
 .recipe-title {
 	margin-top: 3px;
 }
-/*Can't seem to override bootstrap padding rules here*/
+.result-table a {
+	text-decoration: none;
+}
 .result-table > tbody > tr > td > h5{
 	margin-bottom: 0px;
 }
