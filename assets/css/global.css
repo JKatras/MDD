@@ -11,7 +11,13 @@ body {
 .container input {
 	width: 100%;
 }
-
+#detail-table {
+	clear: both;
+}
+#list-container {
+	margin-left: auto;
+	margin-right: auto;
+}
 #search-recipe-btn {
 	width: 210px;
 }

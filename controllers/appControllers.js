@@ -32,7 +32,8 @@ appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl(
 //    }; // searchRecipes **********************
 }]);
 //    $scope.getDetails = function (args) { ***********************
-appControllers.controller('detailCtrl', ['$scope', '$http', function detailCtrl($scope, $http) {
+appControllers.controller('detailCtrl', ['$scope', '$routeParams', '$http', function detailCtrl($scope, $routeParams, $http) {
+	$scope.recipeID = $routeParams.id;
 	$scope.getDetails = function(args) {
     	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + args.recipeID
     	+ '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
