@@ -1,28 +1,20 @@
 <div id="list-container">
 <table class="table result-table table-hover">
 	<tbody>
-	<!--ideally this will be 2 columns, doesn't work well with long titles-->        		
+	<!--ideally this will be 2 columns, doesn't work well with long titles-->        
 	<tr ng-repeat="recipe in results" ng-controller="detailCtrl"> 
-	<!--ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID">-->
-		<!--<a href="" ng-click="getDetails({recipeID:recipe.id})">-->
 		<td>
-		
 			<a href="#details/{{recipe.id}}" ng-click="getDetails({recipeID:recipe.id})">
 	   		<img ng-src="{{recipe.imageUrlsBySize.90}}" />
 	   		</a>
-	   <!--	</div>-->
 	    </td>
 	    <td>
-	    <!--<div ng-controller="detailCtrl">-->
 	    	<a href="#details/{{recipe.id}}" ng-click="getDetails({recipeID:recipe.id})">
             <h3 class="recipe-title">{{recipe.recipeName}}</h3>
             <h4>Rating: {{recipe.rating}}</h4>
             <h5>By: {{recipe.sourceDisplayName}}</h5>
             </a>
-            <!--<a href="" ng-click="getDetails({recipeID:recipe.id})">{{recipe.id}}</a> -->
-           
 	    </td>
-	    <!--</a>-->
 	</tr>
 	</tbody>
 </table>
