@@ -1,10 +1,13 @@
+<div ng-controller="detailCtrl">
 <table id="detail-table">
 <tbody>
-<tr>
+<tr> <!--had ng-repeat="detail in details" here but didn't help-->
 <td>
+<!--CAN'T GET RESULTS BACK FROM CONTROLLER-->
 		<h2>Details View</h2>
-		<h3>{{recipeID}}</h3>
+		<h3>{{detail.name}}</h3>
 </td>
 </tr>
 </tbody>
 </table>
+</div>

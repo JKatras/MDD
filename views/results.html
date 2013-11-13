@@ -1,7 +1,8 @@
-<div id="list-container" ng-controller="detailCtrl">
+<div id="list-container">
 <table class="table result-table table-hover">
-	<tbody>        		
-	<tr ng-repeat="recipe in results"> 
+	<tbody>
+	<!--ideally this will be 2 columns, doesn't work well with long titles-->        		
+	<tr ng-repeat="recipe in results" ng-controller="detailCtrl"> 
 	<!--ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID">-->
 		<!--<a href="" ng-click="getDetails({recipeID:recipe.id})">-->
 		<td>

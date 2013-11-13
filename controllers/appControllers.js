@@ -34,14 +34,20 @@ appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl(
 //    $scope.getDetails = function (args) { ***********************
 appControllers.controller('detailCtrl', ['$scope', '$routeParams', '$http', function detailCtrl($scope, $routeParams, $http) {
 	$scope.recipeID = $routeParams.id;
+	$scope.details = [];
 	$scope.getDetails = function(args) {
     	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + args.recipeID
     	+ '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
     	success(function(data) {
-			console.log(data);
-		//	angular.forEach( , function() {
-    			
-    	//	});
+			
+			angular.forEach(data, function(detail, index) {
+    			$scope.details.push(detail);
+    		
+    	//	$scope.name = data.name;
+    		});
+    		console.log(data);
+    	//	$scope.name = $scope.details[5];
+    	//	console.log($scope.name);
     	}). //success
     	error(function(error) {
 			console.log('Recipe not found');
