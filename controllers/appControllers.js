@@ -8,11 +8,6 @@ appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl(
     //array that will contain search results
     $scope.results = [];
     $scope.getResults = function() {
-    //initialize API connection
-//    $scope.searchRecipes = function() { *******************
-//    ***Need to find a way to clear previous search results but not have first result blank***
- //   	$scope.results =[''];
- 
      	//results returned will be JSONP format
         $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
         	//if successful return, parse data
@@ -24,14 +19,12 @@ appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl(
         		$scope.results.push(recipe);
     		});
         }). // success
-    	//message in case of request error
     	error(function(error) {
-			
+			//message in case of request error
 		}); // error
 	}; 
-//    }; // searchRecipes **********************
 }]);
-//    $scope.getDetails = function (args) { ***********************
+
 appControllers.controller('detailCtrl', ['$scope', '$routeParams', '$http', function detailCtrl($scope, $routeParams, $http) {
 	$scope.recipeID = $routeParams.id;
 	$scope.details = [];
@@ -39,19 +32,14 @@ appControllers.controller('detailCtrl', ['$scope', '$routeParams', '$http', func
     	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + args.recipeID
     	+ '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
     	success(function(data) {
-			
 			angular.forEach(data, function(detail, index) {
     			$scope.details.push(detail);
-    		
-    	//	$scope.name = data.name;
     		});
     		console.log(data);
-    	//	$scope.name = $scope.details[5];
-    	//	console.log($scope.name);
     	}). //success
     	error(function(error) {
 			console.log('Recipe not found');
 		}); // error
     };
 }]);   
-// 	}; // getDetails ****************************
+
