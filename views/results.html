@@ -1,19 +1,27 @@
-
+<div ng-controller="detailCtrl">
 <table class="table result-table table-hover">
 	<tbody>        		
 	<tr ng-repeat="recipe in results" ng-click="getDetails({recipeID:recipe.id})" ng-model="recipeID">
+		
 		<td>
+		
+			<!--<a href="" ng-click="getDetails({recipeID:recipe.id})">-->
 	   		<img ng-src="{{recipe.imageUrlsBySize.90}}" />
+	   		<!--</a>-->
+	   	</div>
 	    </td>
 	    <td>
-	    	<div ng-controller="detailCtrl">
+	    <div ng-controller="detailCtrl">
+	    	<!--<a href="" ng-click="getDetails({recipeID:recipe.id})">-->
             <h3 class="recipe-title">{{recipe.recipeName}}</h3>
             <h4>Rating: {{recipe.rating}}</h4>
-            <h5>By: {{recipe.sourceDisplayName}}</h5> 
-            <a href="" ng-click="getDetails({recipeID:recipe.id})">{{recipe.id}}</a>
-            </div>
+            <h5>By: {{recipe.sourceDisplayName}}</h5>
+            <!--</a>-->
+            <!--<a href="" ng-click="getDetails({recipeID:recipe.id})">{{recipe.id}}</a> -->
+           
 	    </td>
+	    
 	</tr>
 	</tbody>
 </table>
-
+</div>
