@@ -5,13 +5,13 @@
 	<link rel="stylesheet" href="assets/css/global.css"/>
 </head>
 <body>
-	<div class="container" ng-controller="apiController">
+	<div class="container" ng-controller="searchCtrl">
 		<nav class="navbar">
 			<a href="index.html"><img id="logo" src="assets/img/EatIn_logo_166x81.png" alt="EatIn Logo" /></a>
 		</nav>
 
 		<!--form layout is 12-column grid-->
-		<form ng-submit="searchRecipes()" role="form">
+		<form role="form">
 			<legend>Search Recipes</legend>
 		<!--divs span width of container on devices <768px
 			broken up into thirds if screen >=768px-->
@@ -40,7 +40,8 @@
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
 	<script src="controllers/config.js" type="text/javascript"></script>
-	<script src="controllers/apiController.js" type="text/javascript"></script>	
+	<script src="controllers/appControllers.js" type="text/javascript"></script>
+	<!--<script src="libraries/angular-route.js" type="text/javascript"></script>-->	
 </body>
 
 </html>

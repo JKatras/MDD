@@ -1,13 +1,15 @@
-var app = angular.module('EatInApp', [])
+var EatInApp = angular.module('EatInApp', ['appControllers']);
 
-app.config(['$routeProvider', function (r) {
-	r.when('/',
-		{
-			templateUrl:'views/results.html',
-		//	controller:'apiController'
-		}).
-	when('/details/:id',
-		{
-			templateUrl: 'views/details.html'
-		});
+EatInApp.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.when('/', {
+		templateUrl:'views/results.html',
+		controller:'searchCtrl'
+	}).
+	when('/details/:id', {
+		templateUrl: 'views/details.html',
+		controller: 'detailCtrl'
+	}).
+	otherwise({
+		redirectTo: '/'
+	});
 }]);

@@ -1,16 +1,16 @@
-//var app = angular.module('EatInApp', []);
+var appControllers = angular.module('appControllers', []);
 
-app.controller("apiController", function ($scope, $http) {
+appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl($scope, $http) {
  	//var for unique App ID
- 	$scope.appId = "4606347e";
+ 	$scope.appId = '4606347e';
  	//var for unique API Key
-    $scope.apiKey = "2b0dc330fcebb3d65bdddc74aae878b3";
+    $scope.apiKey = '2b0dc330fcebb3d65bdddc74aae878b3';
     //array that will contain search results
     $scope.results = [];
     //initialize API connection
-    $scope.searchRecipes = function() {
+//    $scope.searchRecipes = function() { *******************
 //    ***Need to find a way to clear previous search results but not have first result blank***
-    	$scope.results =[''];
+ //   	$scope.results =[''];
  
      	//results returned will be JSONP format
         $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
@@ -27,9 +27,10 @@ app.controller("apiController", function ($scope, $http) {
     	error(function(error) {
 			
 		}); // error 
-    }; // searchRecipes
-    
-    $scope.getDetails = function (args) {
+//    }; // searchRecipes **********************
+}]);
+//    $scope.getDetails = function (args) { ***********************
+appControllers.controller('detailCtrl', ['$scope', '$http', function detailCtrl($scope, $http) {
     	$http.jsonp('http://api.yummly.com/v1/api/recipe/' + args.recipeID
     	+ '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
     		success(function(data) {
@@ -38,6 +39,5 @@ app.controller("apiController", function ($scope, $http) {
     		error(function(error) {
     			console.log('Recipe not found');
     		}); // error
-   
- 	}; // getDetails
-});
+}]);   
+// 	}; // getDetails ****************************
