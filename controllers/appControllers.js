@@ -7,6 +7,7 @@ appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl(
     $scope.apiKey = '2b0dc330fcebb3d65bdddc74aae878b3';
     //array that will contain search results
     $scope.results = [];
+    $scope.getResults = function() {
     //initialize API connection
 //    $scope.searchRecipes = function() { *******************
 //    ***Need to find a way to clear previous search results but not have first result blank***
@@ -26,7 +27,8 @@ appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl(
     	//message in case of request error
     	error(function(error) {
 			
-		}); // error 
+		}); // error
+	}; 
 //    }; // searchRecipes **********************
 }]);
 //    $scope.getDetails = function (args) { ***********************
