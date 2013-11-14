@@ -1,0 +1,33 @@
+<form ng-submit="" role="form">
+	<legend><h1>New User Signup</h1></legend>
+<!--divs span width of container on devices <768px
+	broken up into thirds if screen >=768px-->
+	<div class="form-group col-xs-12 col-sm-6">
+		<label for="username" class="sr-only">Username</label>
+		<input class="input-lg" ng-model="username" type="text" id="username" placeholder="Username" />
+	</div>
+	<div class="form-group col-xs-12 col-sm-6">
+		<label for="password" class="sr-only">Password</label>
+		<input class="input-lg" ng-model="password" type="password" id="password" placeholder="Password"/>
+	</div>
+	<div class="form-group col-xs-12 col-sm-6">
+		<label for="email" class="sr-only">Email</label>
+		<input class="input-lg" ng-model="email" type="email" id="email" placeholder="Email"/>
+	</div>
+	<div class="form-group col-xs-12 col-sm-6">
+		<label for="firstname" class="sr-only">First Name</label>
+		<input class="input-lg" ng-model="firstname" type="text" id="firstname" placeholder="First Name"/>
+	</div>
+	<div class="form-group col-xs-12 col-sm-6">
+		<label for="lastname" class="sr-only">Last Name</label>
+		<input class="input-lg" ng-model="lastname" type="text" id="lastname" placeholder="Last Name"/>
+	</div>
+	<div class="checkbox col-xs-12 col-sm-6">
+		<!--<div class="checkbox">-->
+		<label><input type="checkbox"> Please email me updates about EatIn </label>
+		<!--</div>-->
+	</div>
+	<div class="form-group col-xs-4 col-sm-offset-4">
+		<input id="signup-btn" class="btn" type="submit" value="Submit" />
+	</div>
+</form>
