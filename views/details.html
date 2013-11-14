@@ -1,13 +1,33 @@
 <div ng-controller="detailCtrl">
-	<table id="detail-table">
-		<tbody>
-		<tr ng-repeat="detail in details">
-			<td>
-			<!--CAN'T GET RESULTS BACK FROM CONTROLLER-->
-				<h2>Details View</h2>
-				<h3>{{detail.name}}</h3>
-			</td>
-		</tr>
-		</tbody>
-	</table>
+<form id="detail-result">
+	<legend><h1>Recipe Title</h1></legend>
+	
+		
+			<div class="form-group col-xs-12 col-sm-4">
+				<!--CAN'T GET RESULTS BACK FROM CONTROLLER-->
+				<!--<h3>{{details}}</h3>-->
+				<img src="assets/img/img-placeholder.png" alt="food image" />
+			</div>
+			<div id="ingredient-list"class="form-group col-xs-6 col-sm-4">
+				<ul>
+					<li><h2>Ingredients</h2></li>
+					<li><h4><p>Ingredient 1</p></h4></li>
+					<li><h4><p>Ingredient 2</p></h4></li>	
+					<li><h4><p>Ingredient 3</p></h4></li>
+					<li><h4><p>Ingredient 4</p></h4></li>
+					<li><h4><p>Ingredient 5</p></h4></li>				
+				</ul>
+			</div>
+			<div id="prep-list" class="form-group col-xs-6 col-sm-4">
+				<ul>
+					<li>Total Time: 1 hr 15 min</li>
+					<li>Makes 4 servings</li>
+					<li><button>Full Prep Instructions ></button></li>
+					<li><p>Note: this is an external link</p></li>
+				</ul>
+				
+			
+			</div>
+		
+</form>
 </div>

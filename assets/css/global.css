@@ -1,6 +1,16 @@
+@font-face {
+	font-family: Couture;
+	src: url(../fonts/COUTURE-Bold.ttf);
+}
 .navbar {
 	background: none;
 	border: none;
+}
+#prep-list {
+	margin-top: 30px;
+}
+#prep-list li {
+	margin: 5px auto;
 }
 body {
 	background: url(../img/bamboo-cutting-board.jpg);
@@ -13,8 +23,12 @@ body {
 .container input {
 	width: 100%;
 }
-#detail-table {
-	clear: both;
+.container h1, h2 {
+	font-family: Couture;
+	color: #5fad87;
+}
+#detail-result img{
+	max-width: 100%;
 }
 #list-container {
 	margin-left: auto;
@@ -22,6 +36,8 @@ body {
 }
 #search-recipe-btn {
 	width: 150px;
+	font-family: Couture;
+	color: white;
 }
 .recipe-title {
 	margin-top: 3px;
