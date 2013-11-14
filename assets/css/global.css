@@ -2,6 +2,10 @@
 	font-family: Couture;
 	src: url(../fonts/COUTURE-Bold.ttf);
 }
+@font-face {
+	font-family: Arial Rounded;
+	src: url(../fonts/Arial Rounded Bold.ttf);
+}
 .navbar {
 	background: none;
 	border: none;
@@ -34,11 +38,22 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-#search-recipe-btn {
+.btn {
+	
+	
+	font-family: Couture;
+	font-size: 18px;
+	color: white;
+	background-color: #5fad87;
+
+}
+/*#search-recipe-btn {
 	width: 150px;
 	font-family: Couture;
+	font-size: 18px;
 	color: white;
-}
+	background-color: #5fad87;
+}*/
 .recipe-title {
 	margin-top: 3px;
 }
@@ -61,4 +76,23 @@ form, table {
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
+}
+::-webkit-input-placeholder {
+   color: #fc7647;
+   font-style: bold;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #fc7647;
+   font-style: bold;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #fc7647;
+   font-style: bold;  
+}
+
+:-ms-input-placeholder {  
+   color: #fc7647;
+   font-style: bold;  
 }
