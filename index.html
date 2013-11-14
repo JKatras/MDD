@@ -5,16 +5,23 @@
 	<link rel="stylesheet" href="assets/css/global.css"/>
 </head>
 <body>
-	<div class="container" ng-controller="searchCtrl">
-		<nav class="navbar">
-			<a href="index.html"><img id="logo" src="assets/img/EatIn_logo_166x81.png" alt="EatIn Logo" /></a>
+	<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html"><img id="logo" src="assets/img/EatIn_logo_166x81.png" alt="EatIn Logo" /></a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="#login">Log In</a>
+				</li>
+			</ul>
 		</nav>
-
-		<!--form layout is 12-column grid-->
+		
+		<!--form layout is 12-column grid
 		<form ng-submit="getResults()" role="form">
 			<legend>Search Recipes</legend>
-		<!--divs span width of container on devices <768px
-			broken up into thirds if screen >=768px-->
+		divs span width of container on devices <768px
+			broken up into thirds if screen >=768px
 			<div class="form-group col-xs-12 col-sm-4">
 				<label for="keyword" class="control-label">By Keyword</label>
 				<input class="input-lg" ng-model="keyword" type="text" id="keyword" placeholder="Add search term" />
@@ -30,10 +37,10 @@
 			<div class="form-group col-xs-4 col-sm-offset-4">
 				<input id="search-recipe-btn" class="btn" type="submit" value="Search" />
 			</div>
-		</form>
-		
-		<div ng-view></div>
-	
+		</form>-->
+		<div ng-controller="searchCtrl">
+			<div ng-view></div>
+		</div>
 	</div>
 	<footer>
 		

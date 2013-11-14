@@ -2,7 +2,7 @@ var EatInApp = angular.module('EatInApp', ['appControllers']);
 
 EatInApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
-		templateUrl:'views/results.html'
+		templateUrl:'views/search.html'
 	//	controller:'searchCtrl'
 	//controller never works, has to be commented out
 	}).

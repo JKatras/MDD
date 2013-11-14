@@ -1,3 +1,7 @@
+.navbar {
+	background: none;
+	border: none;
+}
 body {
 	background: url(../img/bamboo-cutting-board.jpg);
 	background-size: 100%;
