@@ -16,12 +16,12 @@
 				<label for="exclude" class="control-label">And Don't Include</label>
 				<input class="input-lg" ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
 			</div>
-			<div class="form-group col-xs-4 col-sm-offset-4">
+			<div class="form-group col-xs-3 col-sm-offset-4">
 				<input id="search-recipe-btn" class="btn" type="submit" value="Search" />
 			</div>
 		</form>
 		
-<!--<div id="list-container" ng-controller="detailCtrl">-->
+<div id="list-container" ng-controller="detailCtrl">
 	<table class="table result-table table-hover">
 		<tbody>        		
 		<tr ng-repeat="recipe in results"> 
@@ -48,4 +48,5 @@
 		</tr>
 		</tbody>
 	</table>
+</div>
 </div>

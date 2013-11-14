@@ -42,4 +42,3 @@ appControllers.controller('detailCtrl', ['$scope', '$routeParams', '$http', func
 		}); // error
     };
 }]);   
-
