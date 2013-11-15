@@ -8,6 +8,7 @@ appControllers.controller('searchCtrl', ['$scope', '$http', function searchCtrl(
     //array that will contain search results
     $scope.results = [];
     $scope.getResults = function() {
+    	$scope.results = [''];
      	//results returned will be JSONP format
         $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
         	//if successful return, parse data

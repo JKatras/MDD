@@ -1,8 +1,8 @@
 <!--Placeholder data until issues with displaying are resolved-->
-<div ng-controller="detailCtrl">
+<div> <!--ng-controller="detailCtrl"-->
 <form id="detail-result">
 	<legend><h1>Recipe Title</h1></legend>
-	
+	<ul ng-repeat="(key, item) in details"><li>{{key}}: {{item}}</li></ul>
 		
 			<div class="form-group col-xs-12 col-sm-4">
 				<!--CAN'T GET RESULTS BACK FROM CONTROLLER-->
@@ -11,8 +11,8 @@
 			</div>
 			<div id="ingredient-list"class="form-group col-xs-6 col-sm-4">
 				<ul>
-					<li><h2>Ingredients</h2></li>
-					<li><h4><p>Ingredient 1</p></h4></li>
+					<li><h3>Ingredients</h3></li>
+					<li><h4>Ingredient 1</h4></li>
 					<li><h4><p>Ingredient 2</p></h4></li>	
 					<li><h4><p>Ingredient 3</p></h4></li>
 					<li><h4><p>Ingredient 4</p></h4></li>
@@ -26,9 +26,13 @@
 					<li><button>Full Prep Instructions ></button></li>
 					<li><p>Note: this is an external link</p></li>
 				</ul>
-				
+				<ul>
+					<li><button id="btn-fav"type="button" class="btn btn-default">
+  				<span class="glyphicon glyphicon-star"></span> Favorite
+			</button></span></li>
+				</ul>
 			
 			</div>
-		
+		<script type="text/javascript">console.log({{key}});</script>
 </form>
 </div>
