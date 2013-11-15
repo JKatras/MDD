@@ -41,4 +41,4 @@ appControllers.controller('detailCtrl', ['$scope', '$routeParams', '$http', func
 			console.log('Recipe not found');
 		}); // error
     };
-}]);   
+}]);  

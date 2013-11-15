@@ -10,6 +10,12 @@
 	background: none;
 	border: none;
 }
+nav ul {
+	padding-left: 0px;
+}
+nav ul li{
+	display: inline;
+}
 #prep-list {
 	margin-top: 30px;
 }
@@ -27,9 +33,12 @@ body {
 .container input {
 	width: 100%;
 }
-.container h1, h2 {
+.container h1, h2, form > legend {
 	font-family: Couture;
 	color: #5fad87;
+}
+form > legend {
+	text-align: center;
 }
 #detail-result img{
 	max-width: 100%;
@@ -40,7 +49,7 @@ body {
 }
 .btn {
 	
-	
+	padding-top: 8px;
 	font-family: Couture;
 	font-size: 18px;
 	color: white;
@@ -69,6 +78,32 @@ body {
 #login-form p {
 	margin-top: 10px;
 }
+.glyphicon {
+	color: #5fad87;
+	font-size: 30px;
+	float: right;
+	margin: 10px 10px;	
+}
+/*#signup-btn {
+	display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}*/
 form, table {
 -webkit-touch-callout: none;
 -webkit-user-select: none;
@@ -95,4 +130,9 @@ user-select: none;
 :-ms-input-placeholder {  
    color: #fc7647;
    font-style: bold;  
+}
+@media (max-width: 400px){
+	.form-group {
+		padding: 0px;
+	}
 }

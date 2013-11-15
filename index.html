@@ -6,13 +6,19 @@
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html"><img id="logo" src="assets/img/EatIn_logo_166x81.png" alt="EatIn Logo" /></a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
+		<nav class="nav">
+			<!--<div class="navbar-header">-->
+			<ul>
 				<li>
-					<a href="#login">Log In</a>
+				<a href="index.html"><img id="logo" src="assets/img/EatIn_logo_166x81.png" alt="EatIn Logo" /></a>
+				</li>
+			<!--</div>-->
+			<!--<ul class="nav navbar-nav navbar-right">-->
+				<li>
+					<a href="#login"><span class="glyphicon glyphicon-log-in"></span></a>
+				</li>
+				<li>
+					<a href="#search"><span class="glyphicon glyphicon-search"></span></a>
 				</li>
 			</ul>
 		</nav>
@@ -21,12 +27,27 @@
 			<div ng-view></div>
 		</div>
 	</div>
+	<!--Testing AngularFire in the footer. Guess what - it doesn't work for me!-->
 	<footer>
+<!--		<div ng-controller="afController">
 		
+			<div id="userDiv">
+				<div ng-repeat="info in userInfo">
+				<ul>
+					<li>{{info.email}}</li>
+					<li>{{info.firstname}}</li>
+					<li>{{info.lastname}}</li>
+				</ul>
+				</div>
+			</div>	
+		
+		</div>-->
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
 	<script src="controllers/config.js" type="text/javascript"></script>
 	<script src="controllers/appControllers.js" type="text/javascript"></script>
+	<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js'></script>
 		
 </body>
 
