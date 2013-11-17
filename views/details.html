@@ -2,7 +2,7 @@
 <div> <!--ng-controller="detailCtrl"-->
 <form id="detail-result">
 	<legend><h1>Recipe Title</h1></legend>
-	<ul ng-repeat="(key, item) in details"><li>{{key}}: {{item}}</li></ul>
+	<ul ng-repeat="detail in details"><li>{{detail.name}}</li></ul>
 		
 			<div class="form-group col-xs-12 col-sm-4">
 				<!--CAN'T GET RESULTS BACK FROM CONTROLLER-->

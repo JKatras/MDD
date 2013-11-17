@@ -23,8 +23,8 @@ nav ul li{
 	margin: 5px auto;
 }
 body {
-	background: url(../img/bamboo-cutting-board.jpg);
-	background-size: 100%;
+	background: url(../img/bamboo-cutting-board.jpg) no-repeat center -10px;
+	background-position: 50% -10px;
 }
 .container ul {
 	margin-top: 10px;
@@ -124,4 +124,7 @@ user-select: none;
 	.form-group {
 		padding: 0px;
 	}
+}
+@media (max-width: 767px){
+
 }
