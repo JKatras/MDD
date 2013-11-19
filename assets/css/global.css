@@ -6,6 +6,10 @@
 	font-family: Arial Rounded;
 	src: url(../fonts/Arial Rounded Bold.ttf);
 }
+#detail-result .form-group>img {
+	margin-left: auto;
+	margin-right: auto;
+}
 .navbar {
 	background: none;
 	border: none;
@@ -37,7 +41,7 @@ body {
 	font-family: Couture;
 	color: #5fad87;
 }
-form > legend {
+form legend {
 	text-align: center;
 }
 #detail-result img{
@@ -129,7 +133,19 @@ user-select: none;
 	#ingredient-list ul {
 		padding-left: 0px;
 	}
-	#prep-list ul {
-		padding-left: 20px;
+	#prep-list {
+		
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
+	#prep-list ul {
+		/*padding-left: 20px;*/
+		
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 15px;
+	}
+
 }
