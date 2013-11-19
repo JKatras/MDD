@@ -1,26 +1,26 @@
-
 <!--form layout is 12-column grid-->
-	<div id="searchform">
-		<form>
-			<legend><h2>Search Recipes</h2></legend>
-		<!--divs span width of container on devices <768px
-			broken up into thirds if screen >=768px-->
-			<div class="form-group col-xs-12 col-sm-4">
-				<label for="keyword" class="control-label">By Keyword</label>
-				<input class="input-lg" ng-model="keyword" type="text" id="keyword" placeholder="Add search term" />
-			</div>
-			<div class="form-group col-xs-12 col-sm-4">
-				<label for="include" class="control-label">That Include</label>
-				<input class="input-lg" ng-model="include" type="text" id="include" placeholder="Desired ingredients"/>
-			</div>
-			<div class="form-group col-xs-12 col-sm-4">
-				<label for="exclude" class="control-label">And Don't Include</label>
-				<input class="input-lg" ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
-			</div>
-			<div class="form-group col-xs-5 col-sm-2 col-sm-offset-5">
-			<a ui-sref=".results">Search</a>
-				<!--<input id="search-recipe-btn" class="btn btn-green" type="submit" value="Search" />-->
-			</div>
-		</form>
-		<div ui-view></div>
-	</div>
+<div id="searchform">
+	<form>
+		<legend><h2>Search Recipes</h2></legend>
+	<!--divs span width of container on devices <768px
+		broken up into thirds if screen >=768px-->
+		<div class="form-group col-xs-12 col-sm-4">
+			<label for="keyword" class="control-label">By Keyword</label>
+			<input class="input-lg" ng-model="keyword" type="text" id="keyword" placeholder="Add search term" />
+		</div>
+		<div class="form-group col-xs-12 col-sm-4">
+			<label for="include" class="control-label">That Include</label>
+			<input class="input-lg" ng-model="include" type="text" id="include" placeholder="Desired ingredients"/>
+		</div>
+		<div class="form-group col-xs-12 col-sm-4">
+			<label for="exclude" class="control-label">And Don't Include</label>
+			<input class="input-lg" ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
+		</div>
+		<div id="btn-group" class="form-group col-xs-5 col-sm-2 col-sm-offset-5">
+		<a ui-sref=".results" class="btn-green">Search</a>
+			<!--<input id="search-recipe-btn" class="btn btn-green" type="submit" value="Search" />-->
+		</div>
+	</form>
+	
+</div>
+<div ui-view></div>
