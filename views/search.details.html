@@ -1,0 +1,35 @@
+<div>
+
+<form id="detail-result" ng-model="details">
+	<legend><h1>{{details.name}}</h1></legend>
+			
+	<div ng-repeat="detail in details.images" class="form-group col-xs-12 col-sm-4">
+		
+		<img ng-src="{{detail.hostedLargeUrl}}" alt="food image" />
+	</div>
+	<div id="ingredient-list" class="form-group col-xs-6 col-sm-4">
+		<ul>
+			<li><h3>Ingredients</h3></li>
+			<li ng-repeat="detail in details.ingredientLines"><h4>{{detail}}</h4></li>
+							
+		</ul>
+	</div>
+	<div id="prep-list" class="form-group col-xs-6 col-sm-4">
+		<ul>
+			<li>Total Time: 1 hr 15 min</li>
+			<li>Makes 4 servings</li>
+			<li><button>Full Prep Instructions ></button></li>
+			<li><p>Note: this is an external link</p></li>
+		</ul>
+		<ul>
+			<li>
+				<button id="btn-fav"type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-star"></span> Favorite
+				</button></span>
+			</li>
+		</ul>
+	
+	</div>
+		
+</form>
+</div>

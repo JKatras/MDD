@@ -126,5 +126,10 @@ user-select: none;
 	}
 }
 @media (max-width: 767px){
-
+	#ingredient-list ul {
+		padding-left: 0px;
+	}
+	#prep-list ul {
+		padding-left: 20px;
+	}
 }
