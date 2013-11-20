@@ -1,4 +1,4 @@
-var EatInApp = angular.module('EatInApp', ["ui.router"]);
+var EatInApp = angular.module('EatInApp', ["ui.router", "firebase"]);
 
 
 EatInApp.config(function($stateProvider, $urlRouterProvider) {
@@ -14,7 +14,23 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 	.state('signup', {
 		url: '/signup',
-		templateUrl: 'views/signup.html'
+		templateUrl: 'views/signup.html',
+		controller: function ($scope, angularFireCollection) {
+			var ref = new Firebase("https://eatin-base.firebaseio.com/");
+			$scope.profile = angularFireCollection(ref);
+			$scope.createProfile = function () {
+				$scope.profile.add({uname: $scope.username, pass: $scope.password, email: $scope.email, fname: $scope.firstname, lname: $scope.lastname});
+			}
+//			console.log($scope.profile)
+		}
+	})
+	.state('profile', {
+		url: '/profile',
+		templateUrl: 'views/profile.html',
+		controller: function ($scope, angularFireCollection) {
+			var ref = new Firebase("https://eatin-base.firebaseio.com/");
+			$scope.profile = angularFireCollection(ref);
+		}
 	})
 	.state('search.results', {
 		url: '/results',
@@ -69,13 +85,4 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 			
 	   	}
 	})
-//	when('/login', {
-//		templateUrl: 'views/login.html'
-//	}).
-//	when('/signup', {
-//		templateUrl: 'views/signup.html'
-//	}).
-//	otherwise({
-//		redirectTo: '/'
-//	});
 });
