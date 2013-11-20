@@ -4,11 +4,28 @@
 }
 @font-face {
 	font-family: "Arial Rounded Bold";
-	/*src: url(../fonts/Arial Rounded Bold.ttf);*/
 	src: url(../fonts/Arial Rounded Bold.ttf);
 }
-body p, h1, h2, h3, h4, h5, li {
-	color: #fc7647;
+body {
+	background: url(../img/bamboo-cutting-board.jpg) no-repeat center -10px;
+	background-position: 50% -10px;
+}
+body p, label {
+	color: #9DDDC8;
+}
+body label {
+	font-weight: normal;
+}
+.container ul {
+	margin-top: 10px;
+	list-style: none;
+}
+.container input {
+	width: 100%;
+}
+.container h1, h2, form > legend {
+	font-family: Couture;
+	color: #5fad87;
 }
 #detail-result .form-group>img {
 	margin-left: auto;
@@ -24,31 +41,15 @@ nav ul {
 nav ul li{
 	display: inline;
 }
+#ingredient-list {
+	color: black;
+}
 #prep-list {
 	margin-top: 30px;
 	text-align: center;
 }
 #prep-list li {
 	margin: 5px auto;
-	/*font-weight: bold;*/
-}
-#prep-list .btn-green {
-	size: 75%;
-}
-body {
-	background: url(../img/bamboo-cutting-board.jpg) no-repeat center -10px;
-	background-position: 50% -10px;
-}
-.container ul {
-	margin-top: 10px;
-	list-style: none;
-}
-.container input {
-	width: 100%;
-}
-.container h1, h2, form > legend {
-	font-family: Couture;
-	color: #5fad87;
 }
 form legend {
 	text-align: center;
@@ -59,17 +60,14 @@ form legend {
 #list-container {
 	margin-left: auto;
 	margin-right: auto;
-	/*background: rgba(242, 239, 219, .5);*/
 }
 #list-container h3, h4, h5 {
 	font-family: "Arial Rounded Bold", Arial;
 	text-decoration: none;
 	color: black;
-	/*font-family: Georgia, "Times New Roman", Times, serif;*/
 }
 #searchform {
 	background: none;
-	
 }
 .btn-group {
 	text-align: center;
@@ -95,8 +93,12 @@ form legend {
 	-o-user-select: none;
 	user-select: none;
 }
+#btn-goto-source {
+	font-size: 14px;
+}
 #btn-fav {
 	margin-top: 10px;
+	font-family: "Arial Rounded Bold", Arial, Helvetica, sans-serif;
 }
 #btn-fav .glyphicon{
 	color: #fc7647;
@@ -137,20 +139,20 @@ user-select: none;
    color: #fc7647;
    font-style: bold;
 }
-
 :-moz-placeholder { /* Firefox 18- */
    color: #fc7647;
    font-style: bold;  
 }
-
 ::-moz-placeholder {  /* Firefox 19+ */
    color: #fc7647;
    font-style: bold;  
 }
-
 :-ms-input-placeholder {  
    color: #fc7647;
    font-style: bold;  
+}
+#ingredient-list h3{
+		margin-top: 0px;
 }
 @media (max-width: 400px){
 	.form-group {
@@ -161,22 +163,12 @@ user-select: none;
 	#btn-group {
 		text-align: left;
 	}
+	
 	#ingredient-list ul {
 		padding-left: 0px;
+		
 	}
 	#prep-list {
-		
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
+		margin-top: 0px;
 	}
-	#prep-list ul {
-		
-		
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: 15px;
-	}
-
 }
