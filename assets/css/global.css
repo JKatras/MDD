@@ -7,6 +7,9 @@
 	/*src: url(../fonts/Arial Rounded Bold.ttf);*/
 	src: url(../fonts/Arial Rounded Bold.ttf);
 }
+body p, h1, h2, h3, h4, h5, li {
+	color: #fc7647;
+}
 #detail-result .form-group>img {
 	margin-left: auto;
 	margin-right: auto;
@@ -23,9 +26,14 @@ nav ul li{
 }
 #prep-list {
 	margin-top: 30px;
+	text-align: center;
 }
 #prep-list li {
 	margin: 5px auto;
+	/*font-weight: bold;*/
+}
+#prep-list .btn-green {
+	size: 75%;
 }
 body {
 	background: url(../img/bamboo-cutting-board.jpg) no-repeat center -10px;
@@ -71,6 +79,7 @@ form legend {
 	text-decoration: none;
 }
 .btn-green {
+	text-align: center;
 	display: inline-block;
 	cursor: pointer;
 	padding: 14px 10px 10px;
@@ -86,10 +95,12 @@ form legend {
 	-o-user-select: none;
 	user-select: none;
 }
+#btn-fav {
+	margin-top: 10px;
+}
 #btn-fav .glyphicon{
 	color: #fc7647;
 }
-
 .recipe-title {
 	margin-top: 3px;
 }

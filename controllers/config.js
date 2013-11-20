@@ -30,7 +30,9 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 		controller: function ($scope, angularFireCollection) {
 			var ref = new Firebase("https://eatin-base.firebaseio.com/");
 			$scope.profile = angularFireCollection(ref);
+			console.log($scope.profile[1]);
 		}
+		
 	})
 	.state('search.results', {
 		url: '/results',
@@ -43,11 +45,11 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 		    //array that will contain search results
 		    $scope.results = [];
 	     	//results returned will be JSONP format
-	        $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
+	       	$http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
         	//if successful return, parse data
 	        success(function(data) {
-	        
-	        	console.log(data); // **uncomment to view all returned data**
+	    
+	        //	console.log(data); // **uncomment to view all returned data**
 	        	//forEach loop runs through matches, var assigned to recipeNames
 	        	//push names to results array
 	        	angular.forEach(data.matches, function(recipe, index) {
