@@ -3,7 +3,8 @@
 	src: url(../fonts/COUTURE-Bold.ttf);
 }
 @font-face {
-	font-family: Arial Rounded;
+	font-family: "Arial Rounded Bold";
+	/*src: url(../fonts/Arial Rounded Bold.ttf);*/
 	src: url(../fonts/Arial Rounded Bold.ttf);
 }
 #detail-result .form-group>img {
@@ -52,14 +53,17 @@ form legend {
 	margin-right: auto;
 	/*background: rgba(242, 239, 219, .5);*/
 }
-#list-container a {
+#list-container h3, h4, h5 {
+	font-family: "Arial Rounded Bold", Arial;
 	text-decoration: none;
+	color: black;
+	/*font-family: Georgia, "Times New Roman", Times, serif;*/
 }
 #searchform {
 	background: none;
 	
 }
-#btn-group {
+.btn-group {
 	text-align: center;
 }
 .btn-green:hover, .btn-green:focus {
@@ -67,14 +71,8 @@ form legend {
 	text-decoration: none;
 }
 .btn-green {
-	/*float: none;
-	alignment-baseline: middle;
-	vertical-align: middle;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5px;*/
 	display: inline-block;
-	/*text-align: center;*/
+	cursor: pointer;
 	padding: 14px 10px 10px;
 	font-family: Couture;
 	font-size: 18px;
@@ -94,6 +92,9 @@ form legend {
 
 .recipe-title {
 	margin-top: 3px;
+}
+.result-table {
+	background: rgba(242, 239, 219, .5);
 }
 .result-table a {
 	text-decoration: none;

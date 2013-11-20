@@ -30,6 +30,7 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 	        $http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
         	//if successful return, parse data
 	        success(function(data) {
+	        
 	        	console.log(data); // **uncomment to view all returned data**
 	        	//forEach loop runs through matches, var assigned to recipeNames
 	        	//push names to results array
@@ -42,9 +43,9 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 			}); // error
 		} 
 	})
-	.state('search.details', {
+	.state('details', {
 		url: '/details/:id',
-		templateUrl: 'views/search.details.html',
+		templateUrl: 'views/details.html',
 		controller: function ($scope, $http, $stateParams) {
 			$scope.id = $stateParams.id;
 //			$scope.details = [];
