@@ -1,8 +1,8 @@
+<!--Details View-->
 <div id="detail-result">
-
+<!--details is array populated by detail controller-->
 <form ng-model="details">
 	<legend><h2>{{details.name}}</h2></legend>
-	
 	<div ng-repeat="detail in details.images" class="form-group col-xs-12 col-sm-4">
 		<img class="img-responsive" ng-src="{{detail.imageUrlsBySize.360}}" alt="food image" />
 	</div>
@@ -10,6 +10,7 @@
 		<ul>
 			<li><h3>Ingredients</h3></li>
 			<li>
+			<!--ng-repeat is Angular model to repeat objects from array-->
 			<div class="checkbox" ng-repeat="detail in details.ingredientLines">
 				<label>
 					<input type="checkbox"> <h4>{{detail}}</h4>
@@ -19,6 +20,7 @@
 		</ul>
 	</div>
 	<div id="prep-list" class="form-group col-xs-6 col-sm-4">
+	<!--This ul displays total cook time, servings, external link to procedural recipe-->
 		<ul>
 			<li><h4>Total Time: {{details.totalTime}}</h4></li>
 			<li><h4>Makes {{details.yield}} servings</h4></li>
@@ -26,19 +28,19 @@
 			<li><a id="btn-goto-source" class="btn-green" href="{{details.source.sourceRecipeUrl}}">{{details.source.sourceDisplayName}}</a></li>
 			<li><p>Note: this is an external link</p></li>
 			<li>
+	<!--Plan to have option of adding recipes to user profiles as favorites-->
 				<button id="btn-fav"type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-star"></span> Favorite
 				</button></span>
 			</li>
 		</ul>
 	</div>
+	<!--This ul displays Yummly attribution with logo wrapped in anchor to recipe on their site-->
 	<div id="attribution" class="form-group col-xs-6 col-sm-4">
 		<ul>
 			<li>{{details.attribution.text}}</li> 
 			<li><a href="{{details.attribution.url}}"><img ng-src="{{details.attribution.logo}}" alt="Yummly logo" /></a></li>
 		</ul>
 	</div>
-	
-		
 </form>
 </div>

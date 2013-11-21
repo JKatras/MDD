@@ -1,8 +1,15 @@
 <!doctype html>
 <html ng-app = "EatInApp">
 <head>
+	<title>EatIn | What's Cooking?</title>
+	
+	<!--Meta tag which matches page width to device screen width-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!--Twitter Bootstrap linkage-->
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+	
+	<!--Global css file for Bootstrap overrides and/or enhancements-->
 	<link rel="stylesheet" href="assets/css/global.css"/>
 </head>
 
@@ -29,20 +36,26 @@
 			</ul>
 		</nav>
 		
+	<!--This div will contain views assigned by controllers-->
 		<div ui-view></div>
-			
-			
-
-	<footer>
-
-	</footer>
+		
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
-	<script src="controllers/config.js" type="text/javascript"></script>
-	<!--<script src="controllers/appControllers.js" type="text/javascript"></script>-->
-	<script src="libraries/angular-ui-router-min.js" type="text/javascript"></script>
-	<script src='https://cdn.firebase.com/v0/firebase.js'></script>
-    <script src='https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js'></script>
+<!--Scripts placed at end of body for faster app load time-->
+
+<!--Loads angular library-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
+
+<!--Load app's main configuration and controllers-->
+<script src="controllers/config.js" type="text/javascript"></script>
+
+<!--Load angular UI-Router library-->
+<script src="libraries/angular-ui-router-min.js" type="text/javascript"></script>
+
+<!--Load FireBase-->
+<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+
+<!--Load AngularFire-->
+<script src='https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js'></script>
 		
 </body>
 

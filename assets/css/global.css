@@ -1,3 +1,4 @@
+/*Custom fonts linked in /assets/fonts*/
 @font-face {
 	font-family: Couture;
 	src: url(../fonts/COUTURE-Bold.ttf);
@@ -159,6 +160,7 @@ nav .glyphicon {
 	float: right;
 	margin: 10px 10px;
 }
+/*Should prevent user selecting items in tables and forms*/
 form, table {
 -webkit-touch-callout: none;
 -webkit-user-select: none;
@@ -186,6 +188,7 @@ user-select: none;
 #ingredient-list h3{
 		margin-top: 0px;
 }
+/*Settings for screens less than 400 pixels wide*/
 @media (max-width: 400px){
 	.form-group {
 		padding: 0px;
@@ -213,6 +216,7 @@ user-select: none;
 		font-size: 16px;
 	}
 }
+/*For screens up to 767 pixels wide*/
 @media (max-width: 767px) {
 	#about ul{
 		padding: 0px;

@@ -1,13 +1,18 @@
+<!--Search Results View-->
+<!--This view will populate ui-view div nested in Search view-->
 <div id="list-container">
 	<table class="table result-table table-hover">
 		<tbody>        		
 		<tr ng-repeat="recipe in results"> 
-			<td>			
+			<td>	
+		<!--Anchors have dynamic url's based on id of recipe selected-->		
 				<a href="#/details/{{recipe.id}}">
+		<!--90 x 90px image retrieved from API-->
 		   		<img ng-src="{{recipe.imageUrlsBySize.90}}" />
 		   		</a>
 		    </td>
 		    <td>
+		<!--Recipe name, current Yummly rating and source page displayed here-->
 		    	<a href="#/details/{{recipe.id}}">
 	            <h3 class="recipe-title">{{recipe.recipeName}}</h3>
 	            <h4>Rating: {{recipe.rating}}</h4>

@@ -1,11 +1,14 @@
-<!--form layout is 12-column grid-->
+<!--Search Form
+This is the default view-->
 <div id="searchform">
 	<form>
 		<legend><h2>Search Recipes</h2></legend>
-	<!--divs span width of container on devices <768px
-		broken up into thirds if screen >=768px-->
+	<!--Views use 12-column grid layout via Bootstrap
+	In this case, form groups will span 1/3 of screen width on devices
+	wider than 767px, and the entire width on anything smaller-->
 		<div class="form-group col-xs-12 col-sm-4">
 			<label for="keyword" class="control-label">By Keyword</label>
+			<!--ng-models define what parameters are sent through API calls-->
 			<input class="input-lg" ng-model="keyword" type="text" id="keyword" placeholder="Add search term" />
 		</div>
 		<div class="form-group col-xs-12 col-sm-4">
@@ -17,9 +20,11 @@
 			<input class="input-lg" ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
 		</div>
 		<div class="form-group btn-group col-xs-12 col-sm-2 col-sm-offset-5">
+	<!--ui-sref acts similarly to href, but navigates states vs. routes/url's-->
 		<a ui-sref=".results" class="btn-green">Search</a>
 		</div>
 	</form>
 	
 </div>
+<!--This div is a nested view for results, allowed by UI-Router plugin-->
 <div ui-view></div>
