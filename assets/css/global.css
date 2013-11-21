@@ -131,7 +131,7 @@ form legend {
 #login-form p {
 	margin-top: 10px;
 }
-.navbar-right .glyphicon {
+nav .glyphicon {
 	color: #5fad87;
 	font-size: 30px;
 	float: right;
