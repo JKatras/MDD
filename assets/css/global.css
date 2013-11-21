@@ -16,12 +16,12 @@ body p, label {
 body label {
 	font-weight: normal;
 }
+.container input:not([type=checkbox]) {
+	width: 100%;
+}
 .container ul {
 	margin-top: 10px;
 	list-style: none;
-}
-.container input {
-	width: 100%;
 }
 .container h1, h2, form > legend {
 	font-family: Couture;
@@ -35,13 +35,23 @@ body label {
 	background: none;
 	border: none;
 }
-nav ul {
+/*.navbar ul {
 	padding-left: 0px;
-}
-nav ul li{
+}*/
+.navbar-right ul li{
+	padding-top: 0px;
 	display: inline;
 }
+.navbar-right li a {
+	padding-right: 5px;
+}
+.navbar-brand {
+	padding-top: 8px;
+}
 #ingredient-list {
+	color: black;
+}
+#ingredient-list label{
 	color: black;
 }
 #prep-list {
@@ -121,11 +131,11 @@ form legend {
 #login-form p {
 	margin-top: 10px;
 }
-nav .glyphicon {
+.navbar-right .glyphicon {
 	color: #5fad87;
 	font-size: 30px;
 	float: right;
-	margin: 10px 10px;	
+	margin: 10px 10px;
 }
 form, table {
 -webkit-touch-callout: none;
@@ -160,6 +170,9 @@ user-select: none;
 	}
 }
 @media (max-width: 767px){
+	#logo {
+		
+	}
 	#btn-group {
 		text-align: left;
 	}
