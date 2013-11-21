@@ -4,7 +4,6 @@
 	<legend><h2>{{details.name}}</h2></legend>
 	
 	<div ng-repeat="detail in details.images" class="form-group col-xs-12 col-sm-4">
-		
 		<img class="img-responsive" ng-src="{{detail.imageUrlsBySize.360}}" alt="food image" />
 	</div>
 	<div id="ingredient-list" class="form-group col-xs-6 col-sm-4">
@@ -32,8 +31,14 @@
 				</button></span>
 			</li>
 		</ul>
-	
 	</div>
+	<div id="attribution" class="form-group col-xs-6 col-sm-4">
+		<ul>
+			<li>{{details.attribution.text}}</li> 
+			<li><a href="{{details.attribution.url}}"><img ng-src="{{details.attribution.logo}}" alt="Yummly logo" /></a></li>
+		</ul>
+	</div>
+	
 		
 </form>
 </div>
