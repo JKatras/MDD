@@ -1,12 +1,15 @@
 var EatInApp = angular.module('EatInApp', ["ui.router", "firebase"]);
 
-
 EatInApp.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise("/search");
 	$stateProvider
 	.state('search', {
 		url: '/search',
 		templateUrl: 'views/search.html'
+	})
+	.state('about', {
+		url: '/about',
+		templateUrl: 'views/about.html'
 	})
 	.state('login', {
 		url: '/login',

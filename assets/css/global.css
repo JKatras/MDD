@@ -31,22 +31,34 @@ body label {
 	margin-left: auto;
 	margin-right: auto;
 }
+#about > h2 {
+	text-align: center;
+}
+#about {
+	font-family: "Arial Rounded Bold";
+	color: black;
+}
+#about a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+.col-left {
+	background: rgba(242, 239, 219, .5);
+	border-radius: 2px;
+}
 .navbar {
 	background: none;
 	border: none;
 }
-/*.navbar ul {
+nav ul {
 	padding-left: 0px;
-}*/
-.navbar-right ul li{
-	padding-top: 0px;
-	display: inline;
 }
-.navbar-right li a {
-	padding-right: 5px;
+nav ul li {
+	display: inline-block;
 }
-.navbar-brand {
-	padding-top: 8px;
+.nav-right {
+	float: right;
 }
 #ingredient-list {
 	color: black;
@@ -178,10 +190,45 @@ user-select: none;
 	.form-group {
 		padding: 0px;
 	}
+	.container h1, h2, form > legend {
+	font-size: 18px;
+	font-family: Couture;
+	color: #5fad87;
+	}
+	nav .glyphicon {
+	font-size: 25px;
+	}
+	.input-lg {
+		height: 30px;
+		font-size: 14px;
+	}
+	.btn-green {
+		padding: 10px 7px 7px;
+		font-size: 14px;
+	}
+	#about h4 {
+		font-size: 14px;
+	}
+	#about h3 {
+		font-size: 16px;
+	}
 }
-@media (max-width: 767px){
+@media (max-width: 767px) {
+	#about ul{
+		padding: 0px;
+	
+	}
 	#logo {
-		
+		width: 30%;
+	}
+	#logo img {
+		width: 100%;
+	}
+	nav {
+		background-color: #e2d8c1;
+	}
+	.nav-right {
+		margin-top: -5px;
 	}
 	#btn-group {
 		text-align: left;
