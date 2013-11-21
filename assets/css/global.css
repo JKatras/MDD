@@ -45,7 +45,7 @@ body label {
 }
 .col-left {
 	background: rgba(242, 239, 219, .5);
-	border-radius: 2px;
+	border-radius: 4px;
 }
 .navbar {
 	background: none;
@@ -206,10 +206,10 @@ user-select: none;
 		padding: 10px 7px 7px;
 		font-size: 14px;
 	}
-	#about h4 {
+	#list-container h4, #detail-result h4, #about h4 {
 		font-size: 14px;
 	}
-	#about h3 {
+	#list-container h3, #detail-result h3, #about h3 {
 		font-size: 16px;
 	}
 }
