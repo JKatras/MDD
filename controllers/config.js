@@ -56,7 +56,7 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 		    //array that will contain search results
 		    $scope.results = [];
 	     	//results returned will be JSONP format
-	       	$http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient=' + $scope.include + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
+	       	$http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient[]=' + $scope.include + '&excludedIngredient[]=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
         	//if successful return, parse data
 	        success(function(data) {
 	        	//forEach loop runs through matches
@@ -64,6 +64,7 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 	        	angular.forEach(data.matches, function(recipe, index) {
 	        		$scope.results.push(recipe);
 	    		});
+	    		console.log(data);
 	        }). // success
 	    	error(function(error) {
 				alert('Please check your search terms and try again')
