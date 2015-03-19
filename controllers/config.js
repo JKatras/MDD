@@ -2,18 +2,26 @@
 var EatInApp = angular.module('EatInApp', []);
 //Configures which states will activate which views and url's and what 
 //their controllers will be.
-EatInApp.config(function($routeProvider) {
+EatInApp.config(['$routeProvider',
+	function($routeProvider) {
 	$routeProvider
-		.when('/',
+		.when('/search',
 			{
-				templateUrl: "search.html",
-				controller: "AppCtrl"
+				templateUrl: 'views/search.html',
+				controller: 'AppCtrl'
 			}
 		)
-});
+		.when('/about',
+			{
+				templateUrl: 'views/about.html',
+				controller: 'AppCtrl'
+			}
+		)
+		.otherwise({
+			redirectTo: '/search'
+		})
+}]);
 
-EatInApp.controller("AppCtrl", function ($scope) {
-	$scope.model = {
-		message: "Starting over"
-	}
-})
+EatInApp.controller('AppCtrl', function ($scope) {
+	$scope.message = 'Search View'
+});
