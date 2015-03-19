@@ -13,8 +13,12 @@ EatInApp.config(['$routeProvider',
 		)
 		.when('/about',
 			{
-				templateUrl: 'views/about.html',
-				controller: 'AppCtrl'
+				templateUrl: 'views/about.html'
+			}
+		)
+		.when('/search/results',
+			{
+				templateUrl: 'views/results.html'
 			}
 		)
 		.otherwise({
@@ -22,6 +26,6 @@ EatInApp.config(['$routeProvider',
 		})
 }]);
 
-EatInApp.controller('AppCtrl', function ($scope) {
-	$scope.message = 'Search View'
+EatInApp.controller('AppCtrl', function ($scope, $routeParams) {
+	$scope.results = $routeParams.results;
 });
