@@ -1,7 +1,8 @@
 <!--Search Form
 This is the default view-->
 <div id="searchform">
-	<form>
+	<!--<form ng-submit="resultList.getResult()">-->
+	<form ng-submit="submit()">
 		<legend><h2>Search Recipes</h2></legend>
 	<!--Views use 12-column grid layout via Bootstrap
 	In this case, form groups will span 1/3 of screen width on devices
@@ -20,11 +21,14 @@ This is the default view-->
 			<input class="input-lg" ng-model="exclude" type="text" id="exclude" placeholder="Undesired ingredients"/>
 		</div>
 		<div class="form-group btn-group col-xs-12 col-sm-2 col-sm-offset-5">
-	<!--ui-sref acts similarly to href, but navigates states vs. routes/url's-->
-		<a href="#search/results" class="btn-green">Search</a>
+			<input type="submit" name="" value="Search" />
+		<!--<a href="#search/results" class="btn-green">Search</a>-->
 		</div>
+		
 	</form>
-	
+	<div id="error">
+			<p>{{error}}</p>
+		</div>
 </div>
 <!--This div is a nested view for results, allowed by UI-Router plugin-->
 <!--<div ui-view></div>-->

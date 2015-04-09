@@ -28,6 +28,18 @@ body label {
 	font-family: Couture;
 	color: #5fad87;
 }
+#error {
+	color: red;
+	float: left;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+#error p {
+	color: #B71313;
+	-moz-box-shadow: 0 0 1px #7e7979;
+	box-shadow: 0 0 1px #7e7979;
+}
 #detail-result .form-group>img {
 	margin-left: auto;
 	margin-right: auto;

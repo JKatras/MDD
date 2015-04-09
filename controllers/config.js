@@ -1,31 +1,56 @@
-//App's main module with dependencies for UI-Router and FireBase
-var EatInApp = angular.module('EatInApp', []);
-//Configures which states will activate which views and url's and what 
-//their controllers will be.
+var EatInApp = angular.module('EatInApp', ['ngRoute']);
 EatInApp.config(['$routeProvider',
 	function($routeProvider) {
 	$routeProvider
 		.when('/search',
 			{
 				templateUrl: 'views/search.html',
-				controller: 'AppCtrl'
+				controller: 'ApiCtrl'
 			}
 		)
 		.when('/about',
 			{
-				templateUrl: 'views/about.html'
+				templateUrl: 'views/about.html',
+				controller: 'AppCtrl'
 			}
 		)
 		.when('/search/results',
 			{
-				templateUrl: 'views/results.html'
+				templateUrl: 'views/results.html',
+				controller: 'ApiCtrl'
 			}
 		)
 		.otherwise({
-			redirectTo: '/search'
+			redirectTo: '/search',			
 		})
 }]);
 
-EatInApp.controller('AppCtrl', function ($scope, $routeParams) {
-	$scope.results = $routeParams.results;
+EatInApp.controller('AppCtrl', function ($scope, $route, $location) {
+	$scope.current = $location.path();
+});
+
+EatInApp.controller('ApiCtrl', function ($scope, $http) {
+	var resultList = this;
+	$scope.results = [];
+	$scope.appId = '4606347e';
+	$scope.apiKey = '2b0dc330fcebb3d65bdddc74aae878b3';
+//	$scope.keyword = '';
+//	$scope.include = '';
+//	$scope.exclude = '';
+	
+
+		$scope.submit = function() {
+			if ($scope.keyword || $scope.include || $scope.exclude) {
+				
+				$http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedIngredient[]=' + $scope.include + '&excludedIngredient[]=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
+			  success(function(data) {
+			  	angular.forEach(data.matches, function(recipe, index) {
+			  		$scope.results.push(recipe);
+					});
+					console.log(data.matches);
+				});
+			} else {
+				$scope.error = "Please enter search terms and try again";
+			}
+		};
 });
