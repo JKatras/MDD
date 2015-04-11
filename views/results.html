@@ -1,7 +1,8 @@
 <!--<div id="list-container">-->
-<div ng-repeat="result in results">
-	<h3>{{result.recipeName}}</h3>
-	<p>{{result.id}}</p>
+<h2>RESULTS</h2>
+<div ng-repeat="recipe in results">
+	<!--<h3>{{recipe[0].recipeName}}</h3>-->
+	<p>{{recipe.recipeName}}</p>
 </div>
 	<!--<table class="table result-table table-hover">
 		<tbody>        		
