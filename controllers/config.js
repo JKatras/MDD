@@ -27,9 +27,9 @@ EatInApp.config(['$routeProvider',
 		})
 }]);
 
-EatInApp.controller('AppCtrl', function ($scope, $route, $location) {
-	$scope.current = $location.path();
-});
+//EatInApp.controller('AppCtrl', function ($scope, $route, $location) {
+//	$scope.current = $location.path();
+//});
 
 EatInApp.controller('ApiCtrl', function ($scope, $http, $location) {
 	$scope.results = [];
@@ -54,6 +54,9 @@ EatInApp.controller('ApiCtrl', function ($scope, $http, $location) {
 				});
 			} else {
 				$scope.error = "Please enter search terms and try again";
+			}
+			if (!$scope.$$phase) {
+				$scope.$apply();
 			}
 		};
 });
