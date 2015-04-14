@@ -31,7 +31,7 @@ EatInApp.config(['$routeProvider',
 //	$scope.current = $location.path();
 //});
 
-EatInApp.controller('ApiCtrl', function ($scope, $http, $location) {
+EatInApp.controller('ApiCtrl', function ($scope, $http, $location, $timeout) {
 	$scope.results = [];
 	$scope.appId = '4606347e';
 	$scope.apiKey = '2b0dc330fcebb3d65bdddc74aae878b3';
@@ -49,14 +49,23 @@ EatInApp.controller('ApiCtrl', function ($scope, $http, $location) {
 			  	angular.forEach(data.matches, function(recipe, index) {
 			  		$scope.results.push(recipe);
 					});
-					$location.path('search/results'); 
+//					*****************
+//					recipeName is in both search and results views for testing
+//					updates in search but never in results; timeout delay makes no difference
+//					always get 'junk after document element' message in console
+//					*****************
+					$timeout(function() {
+						$location.path('search/results');
+					}, 2000);
+//					$location.path('search/results');
+//					$scope.$apply(); 
 					console.log(data.matches);
 				});
 			} else {
 				$scope.error = "Please enter search terms and try again";
 			}
-			if (!$scope.$$phase) {
-				$scope.$apply();
-			}
+//			if (!$scope.$$phase) {
+//				$scope.$apply();
+//			}
 		};
 });
