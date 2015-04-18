@@ -17,9 +17,9 @@ EatInApp.config(['$routeProvider',
 		)
 		.when('/search/results',
 			{
-				templateUrl: 'views/results.html'
-//				reloadOnSearch: false
-//				controller: 'ApiCtrl'
+				templateUrl: 'views/test.html',
+				reloadOnSearch: false,
+				controller: 'ApiCtrl'
 			}
 		)
 		.otherwise({
@@ -56,9 +56,10 @@ EatInApp.controller('ApiCtrl', function ($scope, $http, $location, $timeout) {
 //					*****************
 					$timeout(function() {
 						$location.path('search/results');
-					}, 2000);
+						$scope.$apply();
+					}, 500);
 //					$location.path('search/results');
-//					$scope.$apply(); 
+//					 
 					console.log(data.matches);
 				});
 			} else {
